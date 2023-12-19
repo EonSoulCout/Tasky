@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Tasky</class>
+ <widget class="QMainWindow" name="Tasky">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>818</width>
+    <height>525</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tasky</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>10</y>
+      <width>411</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Tareas</string>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QTableWidget" name="TblWorks"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>381</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Agregar tarea</string>
+    </property>
+    <widget class="QLabel" name="LTarea">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>26</y>
+       <width>42</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Tarea:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="TxWork">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>30</y>
+       <width>251</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Ingrese una tarea. . .</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LAsig">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>78</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Asignatura:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="BoxMat">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>70</y>
+       <width>251</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Calculo Integral</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Electrotecnia</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Estructura de Datos</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Ética</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Programacion Orientada a Objetos</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Fisica</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="LDate">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>44</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Fecha:</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="Eddate">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>110</y>
+       <width>107</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="dateTime">
+      <datetime>
+       <hour>0</hour>
+       <minute>0</minute>
+       <second>0</second>
+       <year>2023</year>
+       <month>12</month>
+       <day>18</day>
+      </datetime>
+     </property>
+     <property name="displayFormat">
+      <string>d/M/yyyy</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LHora">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>110</y>
+       <width>37</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Hora:</string>
+     </property>
+    </widget>
+    <widget class="QTimeEdit" name="Edtime">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>110</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Btnadd">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>150</y>
+       <width>70</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>818</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
