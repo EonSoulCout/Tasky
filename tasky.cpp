@@ -18,6 +18,7 @@ Tasky::Tasky(QWidget *parent)
     head << "Signa" << "Name" << "Date" << "Hour";
     ui->TblWorks->setHorizontalHeaderLabels(head);
 
+
     //permite crear la intefaz grafica
 }
 
@@ -34,6 +35,12 @@ void Tasky::on_Btnadd_clicked()
     QDate date = ui->Eddate->date();
     QTime hour = ui->Edtime->time();
 
+    ui->TblWorks->insertRow(ui->TblWorks->rowCount());
+    int fila=ui->TblWorks->rowCount()-1;
+    //ui->TblWorks->setItem(fila, name, new QTableWidgetItem(name));
+    //ui->TblWorks->setItem(fila, sign, new QTableWidgetItem(sign));
+    //ui->TblWorks->setItem(fila, date, new QTableWidgetItem(QDate::getDate(date)));
+    //ui->TblWorks->setItem(fila, hour, new QTableWidgetItem(QDate::));
 
     m_tareas.append(new Tarea(sign, name, date, hour));
 
