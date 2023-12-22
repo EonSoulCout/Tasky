@@ -43,5 +43,6 @@ private:
     void agregarTarea(Tarea *t);
     void clean();
     void save();
+    void charge();
 };
 #endif // TASKY_H

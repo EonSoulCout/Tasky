@@ -11,7 +11,7 @@ Tasky::Tasky(QWidget *parent): QMainWindow(parent), ui(new Ui::Tasky)
     head << "Signa" << "Name" << "Date" << "Hour";
     ui->TblWorks->setHorizontalHeaderLabels(head);
 
-
+    charge();
     //permite crear la intefaz grafica
 }
 
@@ -97,9 +97,50 @@ void Tasky::save()
             salida << telefono->text() << ";" << email->text() << "\n";
         }*/
         archivo.close();
-        QMessageBox::information(this,"aGREGADA Tarea","Tarea guardada con éxito");
+        QMessageBox::information(this,"Agregar Tarea","Tarea guardada con éxito");
     }else{
         QMessageBox::critical(this,"Guardar contactos", "No se puede escribir sobre " + ARCHIVO);
+    }
+}
+
+void Tasky::charge()
+{
+    // Verificar si el archivo existe
+    QFile archivo(ARCHIVO);
+    if (!archivo.exists())
+        return;
+
+    // cargar datos
+    if (archivo.open(QFile::ReadOnly)) {
+        QTextStream entrada(&archivo);
+
+        while(!entrada.atEnd()){
+
+            //Lee una linea del archivo
+            QString linea = entrada.readLine();
+
+            //Separa cada campor por medio de ";" por ser .cvs
+            QStringList datos = linea.split(";");
+
+            //Obtengo el nombre y la asiganatura
+            QString sign = datos[0];
+            QString name = datos[1];
+
+            //Obtengo fecha
+            QStringList date = datos[2].split("/");
+            QDate df(date[2].toInt(), date[1].toInt(), date[0].toInt());
+
+            //Obtengo hora
+            QStringList hour = datos[3].split(":");
+            QTime th(hour[0].toInt(), hour[1].toInt());
+
+            //Crea la tarea
+            Tarea *t = new Tarea(sign, name, df, th);
+
+            //Agrega tarea
+            agregarTarea(t);
+        }
+        archivo.close();
     }
 }
 
