@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Recursos/lista-de-tareas.png</file>
+    </qresource>
+</RCC>

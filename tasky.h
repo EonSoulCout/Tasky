@@ -22,12 +22,13 @@ public:
     ~Tasky();
 
 private slots:
-    void on_Btnadd_clicked();
+    void on_BtnAdd_clicked(); // Renombrado para seguir la convención de nombres
+    void on_BtnDelete_clicked();
 
 private:
     Ui::Tasky *ui;
     QList <Tarea*> m_tareas;
-    const QString ARCHIVO ="Tares.csv";
+    const QString ARCHIVO = "Tareas.csv";
     /*
     -Archivos CSV
     -Archivod de texto
@@ -44,5 +45,11 @@ private:
     void clean();
     void save();
     void charge();
+    void eliminarTarea(int fila);
+
+    // Agrega una nueva señal en la sección de señales privadas de tu clase Tasky
+signals:
+    void tareaEliminada(int fila);
+
 };
 #endif // TASKY_H
